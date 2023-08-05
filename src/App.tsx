@@ -9,6 +9,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
+import { Suspense } from 'react';
 
 
 const App = () => {
@@ -22,7 +23,9 @@ const App = () => {
           theme={theme}
         >
           <BrowserRouter>
-            <RouterProvider />
+            <Suspense>
+              <RouterProvider />
+            </Suspense>
           </BrowserRouter>
         </ConfigProvider>
       </QueryClientProvider>

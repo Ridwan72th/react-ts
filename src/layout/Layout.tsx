@@ -1,6 +1,7 @@
 import { Row, Col, } from 'antd'
-import SideMenu from './SideMenu'
 import Content from './Content'
+import SideMenu from './SideMenu'
+
 
 const Layout = () => {
 
