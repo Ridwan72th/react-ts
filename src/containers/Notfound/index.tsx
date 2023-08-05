@@ -1,9 +1,9 @@
+import CImage from "../../components/Image"
 
 const NotFoundPage = () => {
     return (
-        <div>
-            <img src="/image/404-error.jpg" width="400px" height="auto"
-                alt="not found" className="rounded-xl" />
+        <div className="flex justify-center items-center h-full">
+            <CImage src="/image/404-error.jpg" width="80%" alt={"not found"} className="rounded-2xl opacity-80" />
         </div>
     )
 }
