@@ -6,7 +6,7 @@ import {
 
 
 const UserManagement = () => {
-    const { data: userList } = useQuery("userList", () => { return getUsersApi() })
+    const { data: getUserList, isLoading: getUserListLoading } = useQuery("userList", () => { return getUsersApi() })
 
     const columns = [
         {
@@ -26,7 +26,9 @@ const UserManagement = () => {
         },
     ];
     return (
-        <div><Table dataSource={userList} columns={columns} rowKey="id" /></div>
+        <div>
+            <Table dataSource={getUserList} columns={columns} rowKey="id" loading={getUserListLoading} />
+        </div>
     )
 }
 
