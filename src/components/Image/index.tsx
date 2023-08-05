@@ -1,8 +1,12 @@
 import React from 'react'
+import { IImage } from './image.interface'
 
-const CImage = () => {
+const CImage = ({ src, width, height = "auto", alt, className }: IImage) => {
     return (
-        <div>CImage</div>
+        <div>
+            <img src={src} width={width} height={height}
+                alt={alt} className={className} />
+        </div>
     )
 }
 
