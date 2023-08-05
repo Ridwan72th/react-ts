@@ -2,14 +2,14 @@ import { Table } from 'antd';
 import { getUsersApi } from "../../service/user";
 import {
     useQuery
-} from '@tanstack/react-query'
+} from 'react-query'
 
 
 const UserManagement = () => {
-    const { data } = useQuery(["userList"], () => { return getUsersApi() })
+    const { data: userList } = useQuery("userList", () => { return getUsersApi() })
 
 
-    console.log("data", data);
+    console.log("data", userList);
 
     const dataSource = [
         {
@@ -29,22 +29,22 @@ const UserManagement = () => {
     const columns = [
         {
             title: 'Name',
-            dataIndex: 'name',
-            key: 'name',
+            dataIndex: 'firstName',
+            key: 'firstName',
         },
         {
-            title: 'Age',
-            dataIndex: 'age',
-            key: 'age',
+            title: 'Last Name',
+            dataIndex: 'lastName',
+            key: 'lastName',
         },
         {
-            title: 'Address',
-            dataIndex: 'address',
-            key: 'address',
+            title: 'Email',
+            dataIndex: 'email',
+            key: 'email',
         },
     ];
     return (
-        <div><Table dataSource={dataSource} columns={columns} /></div>
+        <div><Table dataSource={userList} columns={columns} rowKey="id" /></div>
     )
 }
 

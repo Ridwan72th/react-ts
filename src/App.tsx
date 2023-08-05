@@ -8,7 +8,7 @@ import { theme } from './antd/theme';
 import {
   QueryClient,
   QueryClientProvider,
-} from '@tanstack/react-query'
+} from 'react-query'
 
 
 const App = () => {
