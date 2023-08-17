@@ -6,5 +6,5 @@ export interface IFormSelect extends SelectProps {
     rules?: FormRule[];
     message?: string;
     formPattern?: RegExp
-    required: boolean
+    required?: boolean
 }
