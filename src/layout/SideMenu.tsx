@@ -24,8 +24,6 @@ const SideMenu = () => {
     }
 
     const onClick: MenuProps['onClick'] = (ev: any) => {
-        console.log("event", ev);
-
         navigate(ev.key)
     };
 
