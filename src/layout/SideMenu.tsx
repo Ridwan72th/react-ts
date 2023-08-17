@@ -30,8 +30,7 @@ const SideMenu = () => {
     };
 
     const items: MenuProps['items'] = [
-        getItem('Dashboard', '/'),
-        getItem('User Management', '/user-management')
+        getItem('Home', '/'),
     ]
 
 
