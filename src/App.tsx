@@ -1,4 +1,4 @@
-import './App.css';
+import { Suspense } from 'react';
 import {
   BrowserRouter,
 } from "react-router-dom";
@@ -9,7 +9,7 @@ import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
-import { Suspense } from 'react';
+import './App.css';
 
 
 const App = () => {
