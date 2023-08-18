@@ -3,7 +3,7 @@ import { IFormSelect } from './form-select.interface';
 
 const FormSelect = (props: IFormSelect) => {
     const { name, label, message, rules, formPattern, required } = props;
-    const newMessage = message || `โปรดกรอกข้อมูล${label} !`
+    const newMessage = message || `โปรดเลือกข้อมูล${label} !`
     const { Option } = Select;
     return (
         <Form.Item name={name}
