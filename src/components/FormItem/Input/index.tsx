@@ -10,7 +10,7 @@ const FormInput = (props: IFormInput) => {
             label={label}
             rules={rules || [{ required: required, message: newMessage, pattern: formPattern }]}
         >
-            <Input {...props} />
+            <Input {...props} required={false} />
         </Form.Item >
     )
 }
