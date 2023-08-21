@@ -7,7 +7,12 @@ module.exports = {
     preflight: false
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary': '#b2d235',
+        'gray1': '#767171'
+      }
+    },
     fontSize: {
       sm: ['14px', '20px'],
       base: ['16px', '24px'],
