@@ -1,4 +1,4 @@
-import CImage from "../../components/Image"
+import CImage from "src/components/Image"
 
 const NotFoundPage = () => {
     return (
