@@ -40,3 +40,10 @@
     transform: rotate(360deg);
   }
 }
+
+.bg-aj-boy{
+  background-image: url("/public/image/aj-boy.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
