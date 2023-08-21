@@ -1,7 +1,7 @@
 import { Form, Input } from 'antd'
 import { IFormTextArea } from './form-text-area.interface';
 
-const FormTextArea = (props: IFormTextArea) => {
+export const FormTextArea = (props: IFormTextArea) => {
     const { TextArea } = Input;
 
     const {
@@ -24,5 +24,3 @@ const FormTextArea = (props: IFormTextArea) => {
         </Form.Item >
     )
 }
-
-export default FormTextArea

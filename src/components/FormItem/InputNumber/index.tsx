@@ -1,7 +1,7 @@
 import { Form, InputNumber, } from 'antd'
 import { IFormInputNumber } from './form-input.interface';
 
-const FormInput = (props: IFormInputNumber) => {
+export const FormInputNumber = (props: IFormInputNumber) => {
     const {
         name,
         label,
@@ -29,5 +29,3 @@ const FormInput = (props: IFormInputNumber) => {
         </Form.Item >
     )
 }
-
-export default FormInput

@@ -1,7 +1,7 @@
 import { Form, Select, } from 'antd'
 import { IFormSelect } from './form-select.interface';
 
-const FormSelect = (props: IFormSelect) => {
+export const FormSelect = (props: IFormSelect) => {
     const {
         name,
         label,
@@ -28,5 +28,3 @@ const FormSelect = (props: IFormSelect) => {
 
     )
 }
-
-export default FormSelect
