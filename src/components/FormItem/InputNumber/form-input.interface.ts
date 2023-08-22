@@ -5,5 +5,4 @@ export interface IFormInputNumber extends InputNumberProps {
     label: string
     rules?: FormRule[];
     message?: string;
-    formPattern?: RegExp
 }

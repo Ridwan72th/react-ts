@@ -7,7 +7,6 @@ export const FormInputNumber = (props: IFormInputNumber) => {
         label,
         message,
         rules,
-        formPattern,
         required
     } = props;
 
@@ -17,7 +16,7 @@ export const FormInputNumber = (props: IFormInputNumber) => {
         <Form.Item
             name={name}
             label={label}
-            rules={rules || [{ required: required, message: newMessage, pattern: formPattern }]}
+            rules={rules || [{ required: required, message: newMessage }]}
         >
             <InputNumber
                 maxLength={50}
