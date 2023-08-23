@@ -4,4 +4,5 @@ export interface IImage {
     height?: string | number
     alt: string
     className?: string
+    loading?: boolean
 }
