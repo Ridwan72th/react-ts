@@ -7,7 +7,7 @@ const Sandbox = () => {
         ModalMethod({
             medthod: "success",
             title: <div className='text-primary text-2xl text-center w-full pb-3'>รายการสำเร็จ</div>,
-            content: <div className='text-lg text-center w-full'>
+            content: <div className='text-lg text-center w-full text-gray1'>
                 {`อุ่นใจส่งเรื่องให้พี่เรียบร้อยแล้ว\nพนักงานจะตรวจสอบและแจ้งผลกลับให้พี่ทาง\nSMS ภายใน 3 ทำการนะฮะ`}
             </div>
         })

@@ -8,8 +8,8 @@ export const ModalMethod = ({
     medthod = "info",
     title,
     content,
-    footer,
-    icon,
+    footer = null,
+    icon = null,
     className }: IModalMethod
 ) => {
     Modal?.[medthod]({
