@@ -8,7 +8,7 @@ const CImage = ({ src, width, height = "auto", alt, className, loading = true }:
 
     const handleErrorImage = ({ currentTarget }: any) => {
         currentTarget.onerror = null;
-        currentTarget.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCDQ22xgk2PYGS_Y1OvfRUabKICuRBTP5HzgegXADIaf2qU_RIiOpTi5iwMge1-hAhOw4&usqp=CAU";
+        currentTarget.src = "/image/404.png";
     }
 
     return (
