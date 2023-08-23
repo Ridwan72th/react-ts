@@ -10,6 +10,8 @@ import {
   QueryClientProvider,
 } from 'react-query'
 import './App.css';
+import 'src/scss/globals.scss'
+
 
 
 const App = () => {
