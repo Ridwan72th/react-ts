@@ -6,7 +6,6 @@ import {
     FormSelect,
     FormTextArea,
 } from 'src/components/FormItem';
-import { ModalMethod, } from 'src/components';
 
 const Home = () => {
     const navigate = useNavigate()
