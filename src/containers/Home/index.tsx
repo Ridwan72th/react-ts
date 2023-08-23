@@ -14,15 +14,12 @@ const Home = () => {
 
     const handleFinish = (values: any) => {
         console.log("finish ::", values);
-        handleModalSuccess()
     }
     const goBack = () => {
         navigate(-1)
     }
 
-    const handleModalSuccess = () => {
-        ModalMethod("success")
-    }
+
 
     return (
         <div className="flex justify-center relative">
