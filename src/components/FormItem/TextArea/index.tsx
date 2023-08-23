@@ -1,4 +1,5 @@
 import { Form, Input } from 'antd'
+import { transformLabel } from 'src/helpers';
 import { IFormTextArea } from './form-text-area.interface';
 
 export const FormTextArea = (props: IFormTextArea) => {
@@ -17,7 +18,7 @@ export const FormTextArea = (props: IFormTextArea) => {
     return (
         <Form.Item
             name={name}
-            label={label}
+            label={transformLabel(label, required)}
             rules={rules || [{ required: required, message: newMessage, pattern: formPattern }]}
         >
             <TextArea maxLength={50} rows={4} {...props} required={false} />

@@ -1,4 +1,5 @@
 import { Form, Select, } from 'antd'
+import { transformLabel } from 'src/helpers';
 import { IFormSelect } from './form-select.interface';
 
 export const FormSelect = (props: IFormSelect) => {
@@ -17,7 +18,7 @@ export const FormSelect = (props: IFormSelect) => {
 
     return (
         <Form.Item name={name}
-            label={label}
+            label={transformLabel(label, required)}
             rules={rules || [{ required: required, message: newMessage, pattern: formPattern }]}>
             <Select {...props} loading={loading}>
                 {props.options?.map((item, ind) => {

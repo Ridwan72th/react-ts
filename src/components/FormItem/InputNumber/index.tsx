@@ -1,4 +1,5 @@
 import { Form, InputNumber, } from 'antd'
+import { transformLabel } from 'src/helpers';
 import { IFormInputNumber } from './form-input.interface';
 
 export const FormInputNumber = (props: IFormInputNumber) => {
@@ -15,7 +16,7 @@ export const FormInputNumber = (props: IFormInputNumber) => {
     return (
         <Form.Item
             name={name}
-            label={label}
+            label={transformLabel(label, required)}
             rules={rules || [{ required: required, message: newMessage }]}
         >
             <InputNumber

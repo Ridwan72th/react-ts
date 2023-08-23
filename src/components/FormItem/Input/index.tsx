@@ -1,4 +1,5 @@
 import { Form, Input, } from 'antd'
+import { transformLabel } from 'src/helpers';
 import { IFormInput } from './form-input.interface';
 
 export const FormInput = (props: IFormInput) => {
@@ -16,7 +17,7 @@ export const FormInput = (props: IFormInput) => {
     return (
         <Form.Item
             name={name}
-            label={label}
+            label={transformLabel(label, required)}
             rules={rules || [{ required: required, message: newMessage, pattern: formPattern }]}
         >
             <Input maxLength={50} {...props} required={false} />
