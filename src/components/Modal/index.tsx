@@ -1,13 +1,27 @@
 import { Modal } from "antd";
+import React from "react";
 import { CloseOutlined } from '@ant-design/icons';
+import { IModalMethod } from "./modal.interface";
 
-type ModalType = "success" | "info" | "warning" | "error"
 
-export const ModalMethod = (status: ModalType = "info") => {
-    Modal?.[status]({
-        title: 'รายการสำเร็จ',
-        content: 'อุ่นใจส่งเรื่องให้พี่เรียบร้อยแล้ว พนักงานจะตรวจสอบและแจ้งผลกลับให้พี่ทาง SMS ภายใน 3 ทำการนะฮะ',
-        centered: true,
-        closeIcon: <CloseOutlined twoToneColor="red" />
+export const ModalMethod = ({
+    medthod = "info",
+    title,
+    content,
+    footer,
+    icon,
+    className }: IModalMethod
+) => {
+    Modal?.[medthod]({
+        title: title,
+        content: content,
+        closable: true,
+        closeIcon: <CloseOutlined className="p-2 bg-primary rounded text-white" />,
+        footer: footer,
+        icon: icon,
+        className: "modal-method " + className,
+        style: {
+            top: "60vh",
+        }
     });
 };
