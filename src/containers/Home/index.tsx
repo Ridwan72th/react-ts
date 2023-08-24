@@ -5,6 +5,7 @@ import {
     FormSelect,
     FormTextArea,
 } from "src/components/FormItem";
+import { transactionSubjects } from "src/constant";
 
 const Home = () => {
     const [form] = Form.useForm();
@@ -28,7 +29,8 @@ const Home = () => {
                     </div>
 
                 </section>
-                <Form onFinish={handleFinish} layout="vertical" form={form}>
+                <Form form={form} onFinish={handleFinish}
+                    layout="vertical" requiredMark={false}>
                     <Row gutter={12}>
                         <Col xs={24} lg={12}>
                             <FormInputNumber
@@ -42,7 +44,7 @@ const Home = () => {
                         </Col>
                         <Col xs={24} lg={24}>
                             <FormSelect name={"topic"} label={"เรื่องที่ต้องการทำรายการ"} required
-                                placeholder="เลือกเรื่องที่ต้องการทำรายการ" loading={false} />
+                                placeholder="เลือกเรื่องที่ต้องการทำรายการ" loading={false} options={transactionSubjects} />
                         </Col>
                         <Col xs={24} lg={12}>
                             <FormInputNumber
@@ -59,7 +61,7 @@ const Home = () => {
                         </Col>
                         <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ปัญหาที่พบเพิ่มเติม"} required
-                                placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" />
+                                placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" rows={3} />
                         </Col>
                         <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ที่อยู่ในการจัดส่ง"} required
