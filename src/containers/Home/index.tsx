@@ -87,6 +87,11 @@ const Home = () => {
                                         <FormTextArea name={"problemMore"} label={"ของพรีเมี่ยมที่แลกและได้ไม่ครบ"} required
                                             placeholder="ระบุรายละเอียดของที่ได้ไม่ครบ" rows={3} />
                                     </Col>}
+                                {handleShowForm("ปัญหาอื่นๆ") &&
+                                    <Col xs={24} lg={24}>
+                                        <FormTextArea name={"premiumProblem"} label={"ของพรีเมี่ยมที่พบปัญหา"} required
+                                            placeholder="ระบุรายละเอียด" rows={3} />
+                                    </Col>}
                             </>
                             <Col xs={24} lg={24}>
                                 <FormTextArea name={"problemMore"} label={"ที่อยู่ในการจัดส่ง"} required
