@@ -9,9 +9,15 @@ import { transactionSubjects } from "src/constant";
 
 const Home = () => {
     const [form] = Form.useForm();
+    const subject = Form.useWatch('subject', form);
+
 
     const handleFinish = (values: any) => {
         console.log("finish ::", values);
+    }
+
+    const handleShowForm = (value: string) => {
+        return subject === value
     }
 
     return (
@@ -43,7 +49,7 @@ const Home = () => {
                                 placeholder="ชื่อ-นามสกุล" />
                         </Col>
                         <Col xs={24} lg={24}>
-                            <FormSelect name={"topic"} label={"เรื่องที่ต้องการทำรายการ"} required
+                            <FormSelect name={"subject"} label={"เรื่องที่ต้องการทำรายการ"} required
                                 placeholder="เลือกเรื่องที่ต้องการทำรายการ" loading={false} options={transactionSubjects} />
                         </Col>
                         <Col xs={24} lg={12}>
@@ -59,10 +65,10 @@ const Home = () => {
 
                             />
                         </Col>
-                        <Col xs={24} lg={24}>
+                        {handleShowForm("ของพรีเมี่ยมชำรุด") && <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ปัญหาที่พบเพิ่มเติม"} required
                                 placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" rows={3} />
-                        </Col>
+                        </Col>}
                         <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ที่อยู่ในการจัดส่ง"} required
                                 placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" />
