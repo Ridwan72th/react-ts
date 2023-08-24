@@ -1,7 +1,6 @@
 import { Button, Col, Form, Row } from "antd"
 import {
     FormInput,
-    FormInputNumber,
     FormSelect,
     FormTextArea,
 } from "src/components/FormItem";
@@ -40,9 +39,9 @@ const Home = () => {
                         layout="vertical" requiredMark={false}>
                         <Row gutter={12}>
                             <Col xs={24} lg={12}>
-                                <FormInputNumber
+                                <FormInput
                                     name={"tel"} label={"ระบุเบอร์ที่แลกของพรีเมี่ยม"} required
-                                    placeholder={transformPlaceholder(subject)} maxLength={10}
+                                    placeholder={transformPlaceholder(subject)} type="number" maxLength={10}
                                 />
                             </Col>
                             <Col xs={24} lg={12}>
@@ -54,22 +53,28 @@ const Home = () => {
                                     placeholder="เลือกเรื่องที่ต้องการทำรายการ" loading={false} options={transactionSubjects} />
                             </Col>
                             <Col xs={24} lg={12}>
-                                <FormInputNumber
+                                <FormInput
                                     name={"productNo"} label={"หมายเลขติดตามพัสดุ"} required
-                                    placeholder="ระบุเลขติดตามพัสดุ" maxLength={10}
+                                    placeholder="ระบุเลขติดตามพัสดุ" type="number" maxLength={10}
                                 />
                             </Col>
                             <>
                                 {handleShowForm([
                                     "ของพรีเมี่ยมชำรุด",
                                     "ของพรีเมี่ยมไม่ตรงตามที่แลก",
-                                    "ติดตามการจัดส่งของพรีเมี่ยม"
                                 ]) && <Col xs={24} lg={12}>
                                         <FormInput
                                             name={"premiumToChange"} label={subject === "ติดตามการจัดส่งของพรีเมี่ยม" ? "ของพรีเมี่ยมที่ติดตามการจัดส่ง" : "ของพรีเมี่ยมที่แลก"} required
-                                            placeholder="ระบุของพรีเมี่ยมที่แลก"
+                                            placeholder={subject === "ติดตามการจัดส่งของพรีเมี่ยม" ? "ของพรีเมี่ยมที่ติดตามการจัดส่ง" : "ระบุของพรีเมี่ยมที่แลก"}
                                         />
                                     </Col>}
+                                {handleShowForm("ติดตามการจัดส่งของพรีเมี่ยม") && <Col xs={24} lg={12}>
+                                    <FormInput
+                                        name={"premiumToSender"} label={"ของพรีเมี่ยมที่ติดตามการจัดส่ง"} required
+                                        placeholder={"ของพรีเมี่ยมที่ติดตามการจัดส่ง"} maxLength={10}
+
+                                    />
+                                </Col>}
                                 {handleShowForm("ของพรีเมี่ยมชำรุด") &&
                                     <Col xs={24} lg={24}>
                                         <FormTextArea name={"problemMore"} label={"ปัญหาที่พบเพิ่มเติม"} required
@@ -84,7 +89,7 @@ const Home = () => {
                                     </Col>}
                                 {handleShowForm("ของพรีเมี่ยมไม่ครบ") &&
                                     <Col xs={24} lg={24}>
-                                        <FormTextArea name={"problemMore"} label={"ของพรีเมี่ยมที่แลกและได้ไม่ครบ"} required
+                                        <FormTextArea name={"problemMoreNotFully"} label={"ของพรีเมี่ยมที่แลกและได้ไม่ครบ"} required
                                             placeholder="ระบุรายละเอียดของที่ได้ไม่ครบ" rows={3} />
                                     </Col>}
                                 {handleShowForm("ปัญหาอื่นๆ") &&
@@ -94,7 +99,7 @@ const Home = () => {
                                     </Col>}
                             </>
                             <Col xs={24} lg={24}>
-                                <FormTextArea name={"problemMore"} label={"ที่อยู่ในการจัดส่ง"} required
+                                <FormTextArea name={"address"} label={"ที่อยู่ในการจัดส่ง"} required
                                     placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" />
                             </Col>
                             <Col span={24}>
