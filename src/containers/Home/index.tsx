@@ -16,8 +16,8 @@ const Home = () => {
         console.log("finish ::", values);
     }
 
-    const handleShowForm = (value: string) => {
-        return subject === value
+    const handleShowForm = (value: string | string[]) => {
+        return value.includes(subject)
     }
 
     return (
