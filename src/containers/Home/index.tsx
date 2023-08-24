@@ -60,7 +60,7 @@ const Home = () => {
                         </Col>
                         <Col xs={24} lg={12}>
                             <FormInput
-                                name={"premiumRecieve"} label={"ระบุของพรีเมี่ยมที่แลก"} required
+                                name={"premiumToChange"} label={"ระบุของพรีเมี่ยมที่แลก"} required
                                 placeholder="ระบุรายละเอียดเพิ่มเติมของปัญหาที่พบ"
 
                             />
@@ -68,6 +68,13 @@ const Home = () => {
                         {handleShowForm("ของพรีเมี่ยมชำรุด") && <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ปัญหาที่พบเพิ่มเติม"} required
                                 placeholder="ระบุที่อยู่ในการจัดส่งของพรีเมี่ยม" rows={3} />
+                        </Col>}
+                        {handleShowForm("ของพรีเมี่ยมไม่ตรงตามที่แลก") && <Col xs={24} lg={24}>
+                            <FormInput
+                                name={"premiumToRecieve"} label={"ของพรีเมี่ยมที่ได้รับ"} required
+                                placeholder="ระบุของที่ได้รับไม่ตรงตามที่แลก"
+
+                            />
                         </Col>}
                         <Col xs={24} lg={24}>
                             <FormTextArea name={"problemMore"} label={"ที่อยู่ในการจัดส่ง"} required
